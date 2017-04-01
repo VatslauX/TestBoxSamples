@@ -1,5 +1,6 @@
 package test;
 
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -17,6 +18,7 @@ public class Tests {
     private String OWNER_BOX_PASSWORD;
     @Test
     public void login(){
+        FirefoxDriverManager.getInstance().setup();
         loginBox(OWNER_EMAIL, OWNER_BOX_PASSWORD);
    }
 }
