@@ -5,15 +5,16 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-
-import static com.codeborne.selenide.Configuration.browser;
+import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Configuration.startMaximized;
-import static com.codeborne.selenide.WebDriverRunner.CHROME;
-import static com.codeborne.selenide.WebDriverRunner.MARIONETTE;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.*;
+
+import static test.Page.*;
 import static test.Steps.loginBox;
 
 /**
@@ -23,19 +24,28 @@ public class Tests {
     static final Logger rootLogger = LogManager.getRootLogger();
     private String OWNER_EMAIL = "";
     private String OWNER_BOX_PASSWORD = "";
+    private String FOLDER_URL = "";
 
-    @BeforeClass
-    public static void beforeClass(){
-
-   }
     @Before
-    public void before(){}
-
-    @Test
-    public void login(){
+    public void before(){
         browser = CHROME;
         startMaximized =false;
         ChromeDriverManager.getInstance().setup();
+    }
+    @Test
+    public void openUrl(){
+        open(boxLoginURL);
+        Assert.assertTrue(boxWindowEmail.isDisplayed()==true);
+        Assert.assertTrue(boxWindowPassword.isDisplayed()==true);
+    }
+    @Test
+    public void login(){
         loginBox(OWNER_EMAIL, OWNER_BOX_PASSWORD);
-   }
+        Assert.assertTrue(boxNoFilesPlaceholder.isDisplayed()==true);
+    }
+    @Test
+    public void loginSpecificFolder(){
+        loginBox(FOLDER_URL, OWNER_EMAIL, OWNER_BOX_PASSWORD);
+        Assert.assertTrue(boxNoFilesPlaceholder.isDisplayed()==true);
+    }
 }
