@@ -44,7 +44,8 @@ public class Tests {
     public void loginSpecificFolder1(){
         Steps.loginBox(FOLDER_URL, OWNER_EMAIL, OWNER_BOX_PASSWORD);
         Assert.assertTrue(Page.boxNoFilesPlaceholder.isDisplayed()==true);
-    }@Test
+    }
+    @Test
     public void loginSpecificFolder2(){
         Steps.loginBox(null, OWNER_EMAIL, OWNER_BOX_PASSWORD);
         Assert.assertTrue(Page.boxNoFilesPlaceholder.isDisplayed()==true);
