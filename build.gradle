@@ -18,3 +18,13 @@ dependencies {
     testCompile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.1'
     testCompile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '1.6.1'
 }
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.fowlie:gradle-jenkins-test:+'
+    }
+}
+
+apply plugin: com.github.fowlie.GradleJenkinsTestPlugin
