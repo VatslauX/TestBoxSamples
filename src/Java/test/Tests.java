@@ -1,3 +1,5 @@
+package test;
+
 import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.apache.logging.log4j.LogManager;
