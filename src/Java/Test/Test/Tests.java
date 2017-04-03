@@ -1,4 +1,4 @@
-package Java.Test;
+package Test;
 import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.apache.logging.log4j.LogManager;
@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static Java.Test.Page.boxLoginURL;
+import static Test.Page.boxLoginURL;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Configuration.startMaximized;
 import static com.codeborne.selenide.WebDriverRunner.*;

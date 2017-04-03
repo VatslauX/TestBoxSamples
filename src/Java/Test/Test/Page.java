@@ -1,4 +1,4 @@
-package Java.Test;
+package Test;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selectors.*;

@@ -1,4 +1,4 @@
-package Java.Test;
+package Test;
 
 import com.codeborne.selenide.Selenide;
 import org.apache.logging.log4j.LogManager;
@@ -15,7 +15,7 @@ public class Steps {
     static final Logger rootLogger = LogManager.getRootLogger();
     public static void loginBox(String login, String password){
         rootLogger.info("Login BOX");
-        Selenide.open(Page.boxLoginURL);
+        open(Page.boxLoginURL);
         sleep(6000);
         if(Page.BOX_BTN_SIGN_IN.isDisplayed()) {
             submitCredentials(login, password);
