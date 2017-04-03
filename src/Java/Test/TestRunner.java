@@ -1,5 +1,6 @@
-package test;
+package Java.Test;
 
+import Java.Test.Tests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

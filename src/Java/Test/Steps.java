@@ -1,4 +1,4 @@
-package test;
+package Java.Test;
 
 import com.codeborne.selenide.Selenide;
 import org.apache.logging.log4j.LogManager;
